@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96D;
+  --gold-dark: #9A7B2F;
+  --black: #0A0A0A;
+  --surface: #141414;
+  --surface2: #1E1E1E;
+  --surface3: #252525;
+  --text: #F0E6D0;
+  --text-muted: #8A7A5A;
+  --border: rgba(201, 168, 76, 0.2);
+  --border-glow: rgba(201, 168, 76, 0.5);
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--black);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ─── NAVBAR ─── */
+.navbar {
+  background: var(--black);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 30px rgba(201, 168, 76, 0.08);
+}
+
+.navbar-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo-icon {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.navbar-links a,
+.navbar-links button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.navbar-links a:hover,
+.navbar-links button:hover,
+.navbar-links a.active,
+.navbar-links button.active {
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.07);
+}
+
+/* ─── CONTAINER ─── */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* ─── LOGIN ─── */
+.login-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+}
+
+.login-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  width: 400px;
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.login-box::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% -20%, rgba(201, 168, 76, 0.06), transparent 60%);
+  pointer-events: none;
+}
+
+.login-box h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.login-box input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 14px 16px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+  margin-bottom: 16px;
+}
+
+.login-box input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.2);
+}
+
+.login-box input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.login-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.btn-gold {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.btn-gold:hover {
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--gold-light);
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+}
+
+.btn-gold:active { transform: scale(0.99); }
+
+/* ─── SECTION HEADER ─── */
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+.section-sub {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* ─── STATS BAR ─── */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.stat {
+  background: var(--surface);
+  padding: 20px 24px;
+}
+
+.stat-num {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ─── COURSES GRID ─── */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.course-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card:hover {
+  border-color: var(--gold-dark);
+  box-shadow: 0 8px 40px rgba(201, 168, 76, 0.1);
+}
+
+.card-banner {
+  height: 6px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+}
+
+.card-banner.enrolled {
+  background: linear-gradient(90deg, #2a5a3a, #3d8b5c, #2a5a3a);
+}
+
+.card-body { padding: 28px 24px 24px; }
+
+.card-category {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.course-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.course-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.card-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.meta-item {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.price {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  color: var(--gold);
+}
+
+.price span {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: 'Raleway', sans-serif;
+}
+
+.course-card button {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 9px 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.course-card button:hover:not(:disabled) {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.course-card button:disabled {
+  background: rgba(61, 139, 92, 0.15);
+  border-color: #3d8b5c;
+  color: #3d8b5c;
+  cursor: default;
+}
+
+/* ─── MY COURSES ─── */
+.enrolled-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 28px;
+  transition: 0.2s;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.enrolled-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+}
+
+.enrolled-card:hover { border-color: var(--border-glow); }
+
+.enrolled-num {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  color: var(--surface3);
+  line-height: 1;
+}
+
+.enrolled-info h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.enrolled-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.enrolled-price {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.progress-bar {
+  height: 2px;
+  background: var(--surface3);
+  margin-top: 10px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+  border-radius: 1px;
+}
+
+/* ─── EMPTY STATE ─── */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+}
+
+.empty-state h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.empty-state p {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* ─── LOADING ─── */
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
